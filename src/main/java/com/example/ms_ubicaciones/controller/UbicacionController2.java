@@ -26,7 +26,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/ubicaciones/v2") // Cambiado a 2 para evitar choques con tu controlador viejo
+@RequestMapping("/ubicaciones") 
 @RequiredArgsConstructor
 @Tag(name = "Ubicaciones V2", description = "Controlador de prueba para la gestión de ubicaciones con Swagger")
 public class UbicacionController2 {

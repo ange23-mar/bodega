@@ -8,21 +8,19 @@ spring:
   profiles:
     active: dev
 
+#laragon
+  #datasource:
+   # url: jdbc:mysql://localhost:3306/db_bodega
+    #username: root
+    #password: ""
+    #driver-class-name: com.mysql.cj.jdbc.Driver
 
+ 
   datasource:
-    url: jdbc:mysql://localhost:3306/db_bodega
-    username: root
-    password: ""
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-  # ====================================================================
-  # OPCIÓN 2: CONEXIÓN ORACLE DE TU COMPAÑERO (COMENTADA PARA FUTURO USO)
-  # ====================================================================
-  # datasource:
-  #   url: jdbc:oracle:thin:@localhost:1521:XE
-  #   username: SCHEMA_BODEGAS
-  #   password: FullStack-Bodega1
-  #   driver-class-name: oracle.jdbc.OracleDriver
+     url: jdbc:oracle:thin:@localhost:1521:XE
+     username: SCHEMA_BODEGAS
+     password: FullStack-Bodega1
+     driver-class-name: oracle.jdbc.OracleDriver
 
   
   jpa:
