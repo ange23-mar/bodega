@@ -19,7 +19,7 @@ public class DtoUbi {
     @Size(max = 100, message = "El pasillo no puede exceder los 100 caracteres")
     private String pasillo;
 
-    @NotNull(message = "El teléfono es obligatorio")  
+    @NotNull(message = "El rut es obligatorio")  
     private Integer rut;
     
     @NotNull(message = "El teléfono es obligatorio")  
