@@ -1,47 +1,39 @@
 server:
   port: 8085
-  address: 0.0.0.0
+  error:
+    include-message: always
 
 spring:
   application:
-    name: ms-bodegas
-
-
-  datasource:    
-    url: jdbc:oracle:thin:@mmg8hvewk688yrh4_low
-    username: SCHEMA_BODEGA
+    name: ms-bodega
+  datasource:
+    url: jdbc:oracle:thin:@mmg8hvewk688yrh4_low?TNS_ADMIN=C:\Users\Usuario\Desktop\prueba3FullStrack\Wallet
     password: FullStack-Bodega1
     driver-class-name: oracle.jdbc.OracleDriver
   jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
     hibernate:
       ddl-auto: update
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.OracleDialect
 
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-    
-      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
-
+# Configuración de documentación con Swagger / OpenApi
 springdoc:
   api-docs:
-    path: /v3/api-docs
+    path: /api-docs
   swagger-ui:
     path: /swagger-ui.html
-    operationsSorter: alpha
+    operationsSorter: method
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "info,health,beans"
+# Integración con el Servidor de Descubrimiento Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://eureka-server:8761/eureka/}
+  instance:
+    prefer-ip-address: true
 #http://localhost:8085/ubicaciones/v2/listar controller 2
 ##http://localhost:8085/ubicaciones/listas controller 1
 ##http://localhost:8085/swagger-ui/index.html con swagger para probar el controller 2 (el viejo no tiene swagger)
