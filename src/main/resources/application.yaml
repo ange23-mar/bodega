@@ -5,12 +5,10 @@ server:
 spring:
   application:
     name: ms-bodegas
-  profiles:
-    active: dev
 
-  datasource:
-  
-    url: jdbc:oracle:thin:@mmg8hvewk688yrh4_low?TNS_ADMIN=C:/Users/Usuario/Desktop/prueba3FullStrack/ms-proveedores/src/main/resources/Wallet
+  datasource:    
+    
+    url: jdbc:oracle:thin:@mmg8hvewk688yrh4_low?TNS_ADMIN=${TNS_ADMIN_PATH:/app/src/main/resources/Wallet}
     username: SCHEMA_BODEGA
     password: FullStack-Bodega1
     driver-class-name: oracle.jdbc.OracleDriver
@@ -22,18 +20,17 @@ spring:
     properties:
       hibernate:
         format_sql: true
-      
         dialect: org.hibernate.dialect.OracleDialect
 
-# EUREKA PARA DOCKER
+
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+    
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
 
-# Configuración limpia de Swagger para Spring Boot 3.x
 springdoc:
   api-docs:
     path: /v3/api-docs
