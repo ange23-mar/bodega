@@ -8,11 +8,10 @@ spring:
 
 
   datasource:    
-    url: jdbc:oracle:thin:@mmg8hvewk688yrh4_low?TNS_ADMIN=/app/resources/main/Wallet
+    url: jdbc:oracle:thin:@mmg8hvewk688yrh4_low
     username: SCHEMA_BODEGA
     password: FullStack-Bodega1
     driver-class-name: oracle.jdbc.OracleDriver
-
   jpa:
     hibernate:
       ddl-auto: update
