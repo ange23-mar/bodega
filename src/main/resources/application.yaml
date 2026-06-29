@@ -8,21 +8,13 @@ spring:
   profiles:
     active: dev
 
-#laragon
-  #datasource:
-   # url: jdbc:mysql://localhost:3306/db_bodega
-    #username: root
-    #password: ""
-    #driver-class-name: com.mysql.cj.jdbc.Driver
-
- 
   datasource:
-     url: jdbc:oracle:thin:@localhost:1521:XE
-     username: SCHEMA_BODEGAS
-     password: FullStack-Bodega1
-     driver-class-name: oracle.jdbc.OracleDriver
-
   
+    url: jdbc:oracle:thin:@mmg8hvewk688yrh4_low?TNS_ADMIN=C:/Users/Usuario/Desktop/prueba3FullStrack/ms-proveedores/src/main/resources/Wallet
+    username: SCHEMA_BODEGA
+    password: FullStack-Bodega1
+    driver-class-name: oracle.jdbc.OracleDriver
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -30,9 +22,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        dialect: org.hibernate.dialect.MySQLDialect
+      
+        dialect: org.hibernate.dialect.OracleDialect
 
-# EUREKA  PARA DOCKER
+# EUREKA PARA DOCKER
 eureka:
   client:
     register-with-eureka: true
@@ -53,8 +46,6 @@ management:
     web:
       exposure:
         include: "info,health,beans"
-
-
 #http://localhost:8085/ubicaciones/v2/listar controller 2
 ##http://localhost:8085/ubicaciones/listas controller 1
 ##http://localhost:8085/swagger-ui/index.html con swagger para probar el controller 2 (el viejo no tiene swagger)

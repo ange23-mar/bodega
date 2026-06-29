@@ -35,12 +35,12 @@ public class UbicacionController2 {
 
 
     @GetMapping("/listar")
-    @Operation(summary = "Obtener ubicaciones") // Deja solo esto, quita el @ApiResponse complejo por ahora
+    @Operation(summary = "Obtener ubicaciones") 
     public ResponseEntity<List<DtoResponseUbi>> obtenerUbicaciones() {
         return ResponseEntity.ok(ubicacionService.obtenerUbicaciones());
     }
 
-    @GetMapping("/{ubicacionId}") // Limpiado el duplicado que tenías aquí
+    @GetMapping("/{ubicacionId}") 
     @Operation(summary = "Obtener ubicación por ID", description = "Busca una ubicación específica usando su identificador único")
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Ubicación encontrada", 
